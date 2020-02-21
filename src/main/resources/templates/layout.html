@@ -1,0 +1,13 @@
+<!Doctype html>
+<html xmlns:th>
+<head th:fragment="site-head"></head>
+    <body>
+    <header th:fragment="logged-out" th:remove="tag">
+
+            <a href="users/login.html" th:href="@{users/login}">Login</a>
+            <a href="users/registration.html" th:href="@{users/registration}" >Registration </a>
+
+    </header>
+
+    </body>
+</html>

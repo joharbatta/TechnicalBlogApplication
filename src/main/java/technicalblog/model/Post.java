@@ -4,9 +4,18 @@ import java.util.Date;
 
 public class Post {
 
+    private Integer id;
     private String title;
     private String body;
     private Date date;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
