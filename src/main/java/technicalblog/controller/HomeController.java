@@ -16,7 +16,7 @@ public class HomeController {
     @Autowired
     private PostService postService;
 
-    @RequestMapping("/")
+    @RequestMapping("/posts")
     public String getAllPosts(Model model)
     {
         ArrayList<Post> posts=postService.getAllPosts();
