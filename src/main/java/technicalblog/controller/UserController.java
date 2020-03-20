@@ -22,7 +22,6 @@ public class UserController {
     public String loginUser(User user) {
         boolean name=user.getUsername().equals("abc");
         boolean pwd=user.getPassword().equals("123");
-
         if(name && pwd) {
             return "redirect:/posts";
         }
@@ -33,3 +32,58 @@ public class UserController {
 
 
 }
+
+//
+////dependency injection
+////here we cant change pizza property as type of pizza hardcode tight coupling
+//class Food{
+//    Pizza p=new Pizza();
+//    void eat()
+//    {
+//        p.eat();
+//    }
+//}
+//// 1st method setter injection
+//
+//class Food{
+//    Pizza p;
+//
+//    void setPizza(Pizza p)
+//    {
+//        this.p=p;
+//    }
+//    void eat()
+//    {
+//        p.eat();
+//    }
+//}
+//Food f=new Food();
+//f.setPizza(new CheezPizza());
+//f.eat();
+//
+////constructor method
+//
+//class Food{
+//   private  Pizza p;
+//
+//   Food(Pizza p)
+//    {
+//        this.p=p;
+//
+//    }
+//
+//    void setPizza(Pizza p)
+//    {
+//        this.p=p;
+//    }
+//    void eat()
+//    {
+//        p.eat();
+//    }
+//}
+//Food f=new Food(new Pizza());
+//f.setPizza(new CheezPizza());
+//        f.eat();
+
+
+

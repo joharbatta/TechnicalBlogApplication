@@ -7,7 +7,7 @@ import java.util.Date;
 @Service
 public class PostService {
     public ArrayList<Post> getAllPosts() {
-        ArrayList<Post> posts = new ArrayList<>();
+        ArrayList<Post> list = new ArrayList<>();
 
         Post post = new Post();
         post.setTitle("Post 1");
@@ -24,10 +24,10 @@ public class PostService {
         post2.setBody("Post Body 3");
         post2.setDate(new Date());
 
-        posts.add(post);
-        posts.add(post1);
-        posts.add(post2);
+        list.add(post);
+        list.add(post1);
+        list.add(post2);
 
-        return posts;
+        return list;
     }
 }

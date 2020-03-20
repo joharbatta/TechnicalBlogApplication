@@ -21,7 +21,6 @@ public class HomeController {
     {
         ArrayList<Post> posts=postService.getAllPosts();
         model.addAttribute("posts",posts);
-
         return "index";
     }
 }
