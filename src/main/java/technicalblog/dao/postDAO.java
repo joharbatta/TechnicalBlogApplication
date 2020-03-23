@@ -13,6 +13,7 @@ public class postDAO {
 
     public ArrayList<Post> getAllPosts() {
         ArrayList<Post> list = new ArrayList<>();
+
         try{
             Class.forName("org.postgresql.Driver");
             String url="jdbc:postgresql://localhost:5432/technicalblog";
@@ -23,8 +24,6 @@ public class postDAO {
             Statement stmt=con.createStatement();
             String q="select * from posts";
             ResultSet rs=stmt.executeQuery(q);
-
-            //Post post = new Post();
             while(rs.next())
             {
 //                    System.out.println(rs.getInt(1)+" : "+rs.getString (2)+" : "+rs.getString(3)+" :"+rs.getDate(4));
@@ -34,7 +33,6 @@ public class postDAO {
                 post.setDate(rs.getDate(4));
                 list.add(post);
             }
-             //return list;
             con.close();
         }
         catch(Exception e){

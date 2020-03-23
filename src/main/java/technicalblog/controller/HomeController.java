@@ -14,8 +14,8 @@ import java.util.Date;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private PostService postService;
+//    @Autowired
+//    private PostService postService;
     @Autowired
     private postDAO postDAO;
 

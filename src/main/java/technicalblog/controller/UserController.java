@@ -1,9 +1,13 @@
 package technicalblog.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import technicalblog.dao.postDAO;
 import technicalblog.model.User;
+import technicalblog.service.userService;
+
 
 @Controller
 public class UserController {
@@ -20,9 +24,13 @@ public class UserController {
 
     @RequestMapping(value = "users/login", method= RequestMethod.POST)
     public String loginUser(User user) {
-        boolean name=user.getUsername().equals("abc");
-        boolean pwd=user.getPassword().equals("123");
-        if(name && pwd) {
+//        boolean name=user.getUsername().equals("abc");
+//        boolean pwd=user.getPassword().equals("123");
+//        boolean check=false;
+        userService u=new userService();
+        boolean flag=u.isValidUser(user);
+        if(flag)
+        {
             return "redirect:/posts";
         }
         else {
