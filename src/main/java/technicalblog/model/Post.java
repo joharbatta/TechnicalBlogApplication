@@ -1,9 +1,15 @@
 package technicalblog.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Entity
+@Table(name = "posts")
 public class Post {
 
+    @Id
     private Integer id;
     private String title;
     private String body;

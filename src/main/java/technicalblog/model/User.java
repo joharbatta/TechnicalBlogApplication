@@ -1,6 +1,9 @@
 package technicalblog.model;
 
+import javax.persistence.Entity;
+
 //pojo plain old java object has no functionalily only set data
+
 public class User {
 
     private String username;

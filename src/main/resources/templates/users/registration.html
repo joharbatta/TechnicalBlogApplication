@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!Doctype html>
 
-</body>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Spring MVC Application - User Registration</title>
+</head>
+
+<header th:replace="layout :: logged-out"></header>
+
+<h2>Please Register:</h2>
+
+<form th:action="@{/users/registration}" th:method="POST" th:object="${User}">
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" >
+
+    <label for="fullname">Full Name:</label>
+    <input type="text" id="fullname" name="fullName" />
+
+    <label for="fullname">Email Address:</label>
+    <input type="text" id="emailaddress" name="emailAddress" >
+
+    <label for="fullname">Mobile Number:</label>
+    <input type="text" id="mobilenumber" name="mobileNumber" />
+
+    <input type="submit" value="Register"/>
+</form>
+
 </html>

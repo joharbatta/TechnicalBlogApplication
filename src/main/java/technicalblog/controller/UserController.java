@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import technicalblog.dao.postDAO;
+import technicalblog.dao.userDAO;
 import technicalblog.model.User;
 import technicalblog.service.userService;
 
@@ -14,11 +15,13 @@ public class UserController {
 
     @RequestMapping("users/login")  //when get request by default
     public String login() {
+
         return "users/login";
     }
 
     @RequestMapping("users/registration")
     public String registration() {
+
         return "users/registration";
     }
 
@@ -28,6 +31,7 @@ public class UserController {
 //        boolean pwd=user.getPassword().equals("123");
 //        boolean check=false;
         userService u=new userService();
+//        userDAO c=new userDAO();
         boolean flag=u.isValidUser(user);
         if(flag)
         {
@@ -36,6 +40,11 @@ public class UserController {
         else {
             return "users/login";
         }
+    }
+    @RequestMapping(value = "users/registration", method=RequestMethod.POST)
+    public String registerUser(User user) {
+//        userService.registerUser(user);
+        return "users/login";
     }
 
 
