@@ -19,6 +19,6 @@ public class PostController {
     {
         List<Post> posts=postService.getAllPosts();
         model.addAttribute("posts",posts);
-        return "index";
+        return "posts";
     }
 }

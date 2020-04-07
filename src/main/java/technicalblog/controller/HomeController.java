@@ -36,6 +36,5 @@ public class HomeController {
         model.addAttribute("posts", posts);
 
         return "index";
-
     }
 }
