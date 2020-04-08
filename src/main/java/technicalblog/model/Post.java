@@ -1,8 +1,6 @@
 package technicalblog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -10,8 +8,11 @@ import java.util.Date;
 public class Post {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "title")
     private String title;
+    @Column(name = "body")
     private String body;
     private Date date;
 
