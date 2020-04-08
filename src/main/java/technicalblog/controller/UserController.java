@@ -35,11 +35,11 @@ public class UserController {
 
     @RequestMapping(value = "users/login", method= RequestMethod.POST)
     public String loginUser(User user) {
-//        boolean name=user.getUsername().equals("abc");
-//        boolean pwd=user.getPassword().equals("123");
-//        boolean check=false;
+    //        boolean name=user.getUsername().equals("abc");
+    //        boolean pwd=user.getPassword().equals("123");
+    //        boolean check=false;
         userService u=new userService();
-//        userDAO c=new userDAO();
+    //        userDAO c=new userDAO();
         boolean flag=u.isValidUser(user);
         if(flag)
         {
@@ -51,7 +51,7 @@ public class UserController {
     }
     @RequestMapping(value = "users/registration", method=RequestMethod.POST)
     public String registerUser(User user) {
-//        userService.registerUser(user);
+    //        userService.registerUser(user);
         return "users/login";
     }
     @RequestMapping(value = "users/logout", method=RequestMethod.POST)

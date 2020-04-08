@@ -20,6 +20,12 @@ public class PostService {
         return repository.getLatestPost();
 
     }
+    public void createPost(Post newPost) {
+        newPost.setDate(new Date());
+        repository.createPost(newPost);
+        System.out.println("New Post: "+newPost);
+    }
+
 //    public ArrayList<Post> getAllPosts() {
 //        ArrayList<Post> list = new ArrayList<>();
 //
