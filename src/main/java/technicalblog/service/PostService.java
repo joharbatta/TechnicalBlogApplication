@@ -27,7 +27,6 @@ public class PostService {
     }
     public Post getPost(Integer postId)
     {
-
         return repository.getPost(postId);
     }
     public void updatePost(Post updatedPost) {
