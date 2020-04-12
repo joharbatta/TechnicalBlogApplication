@@ -1,6 +1,8 @@
 package technicalblog.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //pojo plain old java object has no functionalily only set data
 
@@ -23,6 +25,8 @@ public class User {
     @JoinColumn(name = "profile_id")
     private UserProfile profile;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    private List<Post> posts = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -47,11 +51,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
     public UserProfile getProfile() {
         return profile;
     }
 
     public void setProfile(UserProfile profile) {
         this.profile = profile;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }

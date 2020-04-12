@@ -25,7 +25,9 @@ public class PostService {
         repository.createPost(newPost);
         System.out.println("New Post: "+newPost);
     }
-    public Post getPost(Integer postId) {
+    public Post getPost(Integer postId)
+    {
+
         return repository.getPost(postId);
     }
     public void updatePost(Post updatedPost) {
