@@ -1,3 +1,26 @@
+<!--<!Doctype html>-->
+
+<!--<html xmlns:th="http://thymeleaf.org">-->
+
+<!--<head th:replace="layout :: site-head">-->
+<!--    <title>Spring MVC Application - Login</title>-->
+<!--</head>-->
+
+<!--<header th:replace="layout :: logged-out"></header>-->
+
+<!--<h2>Please Login:</h2>-->
+
+<!--<form action="/users/login" method="post" th:object="${User}">-->
+<!--    <label for="username">Username:</label>-->
+<!--    <input type="text"  name="username" id="username"/>-->
+<!--    <label for="password">Password:</label>-->
+<!--    <input type="password" name="password" id="password"/>-->
+<!--    <input type="submit" value="Login"/>-->
+<!--</form>-->
+<!--</html>-->
+
+<!--name is basically for as it identify the object properties modal has now values-->
+<!--it identified-->
 <!Doctype html>
 
 <html xmlns:th="http://thymeleaf.org">
@@ -10,14 +33,12 @@
 
 <h2>Please Login:</h2>
 
-<form action="/users/login" method="post" th:object="${User}">
+<form th:action="@{/users/login}" th:method="POST" th:object="${User}">
     <label for="username">Username:</label>
-    <input type="text"  name="username" id="username"/>
+    <input type="text" id="username" name="username"/>
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password"/>
+    <input type="password" id="password" name="password"/>
     <input type="submit" value="Login"/>
 </form>
-</html>
 
-<!--name is basically for as it identify the object properties modal has now values-->
-<!--it identified-->
+</html>

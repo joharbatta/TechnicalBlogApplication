@@ -1,7 +1,9 @@
 package technicalblog.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "posts")
@@ -15,6 +17,19 @@ public class Post {
     @Column(name = "body")
     private String body;
     private Date date;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Category> categories = new ArrayList<>();
+
+    @Transient
+    private String springBlog;
+
+    @Transient
+    private String javaBlog;
 
     public Integer getId() {
         return id;
@@ -47,4 +62,39 @@ public class Post {
     public void setDate(Date date) {
         this.date = date;
     }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
+    public String getSpringBlog() {
+        return springBlog;
+    }
+
+    public void setSpringBlog(String springBlog) {
+        this.springBlog = springBlog;
+    }
+
+    public String getJavaBlog() {
+        return javaBlog;
+    }
+
+    public void setJavaBlog(String javaBlog) {
+        this.javaBlog = javaBlog;
+    }
+
+
 }
